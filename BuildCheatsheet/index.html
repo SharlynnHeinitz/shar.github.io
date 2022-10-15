@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Cheatsheet: Positioning</title>
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Volkhov&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>CSS Cheatsheet: Positioning</h1>
+            </header>
+            <h2>Positioning in CSS</h2>
+            <h3 id="tablenote">* For Examples: Compare <u>Static Example</u> to each following example to see how positioning changes</h4>
+            <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>CSS Syntax</td>
+                        <td>Description</td>
+                        <td>Example</td>
+                        <td>Example Explanation</td>
+                    </tr>
+                </thead>
+                <!--Positioning: Static-->
+                <tr>
+                    <td>Static</td>
+                    <td><span class="csssyntax">position</span>: static</td>
+                    <td class="description">"HTML elements are positioned static by default... It is always positioned according to the normal flow of the page."</td>
+                    <td class="example">
+                        <div class="rectangleA">A</div>
+                        <div class="rectangleB">B</div>
+                        <div class="rectangleC">C</div>
+                    </td>
+                    <td>This is the default position. The boxes; "A" "B" and "C" are entered into the HTML in that order, within the table's example box.</td>
+                </tr>
+                <!--Positioning: Relative-->
+                <tr>
+                    <td>Relative</td>
+                    <td><span class="csssyntax">position</span>: relative</td>
+                    <td class="description">"...positioned relative to its normal position. Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element."</td>
+                    <td class="example" class="relative">
+                        <div id="relative">
+                            <div class="rectangleA">A</div>
+                            <div id=relativeB class="rectangleB">B</div>
+                            <div class="rectangleC">C</div>
+                        </div>
+                    </td>
+                    <td>The "B" box has been entered into the same HTML order as before in the "Static Example." But by using CSS, it's position is set 50px away from the top of where it was originally set within the HTML. In other words, relative to itsself. The other content ("A" and "C") have not moved or adjusted because of this change.</td>
+                </tr>
+                <!--Positioning: Absolute-->
+                <tr>
+                    <td>Absolute</td>
+                    <td><span class="csssyntax">position</span>: absolute</td>
+                    <td class="description">"...positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling...Absolute positioned elements are removed from the normal flow, and can overlap elements."</td>
+                    <td class="example" class="absolute">
+                        <div class="rectangleA">A</div>
+                        <div id="absoluteB" class="rectangleB">B</div>
+                        <div class="rectangleC">C</div>
+                    </td>
+                    <td>The "B" box is now positioned relative to it's "parent" of the HTML (in this case the table cell). In this example it is 15% away from the top. Also, since it was removed from the HTML normal flow, the following elements ("C") moved into it's place.</td>
+                </tr>
+                <!--Positioning: Sticky-->
+                <tr>
+                    <td>Sticky</td>
+                    <td><span class="csssyntax">position</span>: sticky</td>
+                    <td class="description">"...positioned based on the user's scroll position. A sticky element toggles between <em>relative</em> and <em>fixed</em>, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport- then it "sticks" in place..."</td>
+                    <td class="example" class="sticky">
+                        <div class="rectangleA">A</div>
+                        <div id="stickyB" class="rectangleB">B</div>
+                       <div class="rectangleC">C</div>
+                    </td>
+                    <td>The "B" box is positioned sticky. It remains in it's normal HTML floww, until the determined position is reached within the viewpoint, then it stays in place until it's parent container leaves the viewscreen. As you scroll down this page, "B" remains in it's relative position. Once it reaches the top of the page (it's CSS determined position) it "sticks" to the top, until the text box leaves the viewscreen.</td>
+                </tr>
+                <!--Positioning: Fixed-->
+                <tr>
+                    <td>Fixed</td>
+                    <td><span class="csssyntax">position</span>: fixed</td>
+                    <td class="description">"...positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. A fixed element does not leave a gap in the page where it would normally have been located."</td>
+                    <td class="example" class="fixed">
+                        <div class="rectangleA">A</div>
+                        <div id="fixedB" class="rectangleB">B</div>
+                        <div class="rectangleC">C</div>
+                    </td>
+                    <td>You may have already noticed the "B" box in this exmaple, which is in it's CSS fixed position, located at the bottom right corner of the viewport. It is removed from the HTML flow and "fixed" to the bottom of the screen.The following HTML element "C" has taken it's place within the flow. It also remains in it's fixed place no matter how far down you scroll.</td>
+                </tr>
+            </table>
+            </div>
+            <h3 id="descriptionsnote"><em>* All <strong>Descriptions</strong> copied from <a href="https://www.w3schools.com/css/css_positioning.asp">w3schools.com</a></em></h3>
+            <br>
+            <div>
+                <h3 id="keepscrolling">Keep Scrolling</h3>
+                <p style="text-align: center">To see the Fixed position in action...</p>
+                <div style="display:flex; justify-content: center;">
+                    <img src="arrowdown.png" alt="arrow pointing downwards" style="width: 25%;">
+                </div>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p class="scrolling">...and scrolling...</p>
+                <p style="text-align: center; padding: 100px;">See,  Fixed <span style="background-color: orange; padding: 3px">B</span> is still there at the bottom right corner of your screen!</p>
+            </div>
+            <h3>Keep Learning</h3>
+                <p>Check out <a class="link" href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> for further information on positioning; including float, z-index, and clear.</p>
+        </main>
+        <footer>
+            <h4>Website &copy; Sharlynn 2022</h4>
+            <h5><em>Thanks <a class="link" id="codecademy" href="http://www.codecademy.com/" >Codecademy</a> for the fun project challenge!</em></h5>
+        </footer>
+    </body>
+</html>
